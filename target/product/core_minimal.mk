@@ -111,8 +111,13 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.zygote=zygote32
+ifeq ($(strip $(BUILD_WITH_FORCEENCRYPT)),true)
+PRODUCT_COPY_FILES += \
+    system/core/rootdir/init.zygote32_main.rc:root/init.zygote32.rc
+else
 PRODUCT_COPY_FILES += \
     system/core/rootdir/init.zygote32.rc:root/init.zygote32.rc
+endif
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/runtime_libart.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)

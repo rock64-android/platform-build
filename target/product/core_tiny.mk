@@ -103,8 +103,13 @@ PRODUCT_SYSTEM_SERVER_JARS := \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.zygote=zygote32
+ifeq ($(strip $(BUILD_WITH_FORCEENCRYPT)),true)
+PRODUCT_COPY_FILES += \
+    system/core/rootdir/init.zygote32_main.rc:root/init.zygote32.rc
+else
 PRODUCT_COPY_FILES += \
     system/core/rootdir/init.zygote32.rc:root/init.zygote32.rc
+endif
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=unknown
