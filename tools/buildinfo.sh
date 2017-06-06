@@ -26,10 +26,10 @@ fi
 if [ -n "$AB_OTA_UPDATER" ] ; then
   echo "ro.build.ab_update=$AB_OTA_UPDATER"
 fi
-echo "ro.product.model=$PRODUCT_MODEL"
-echo "ro.product.brand=$PRODUCT_BRAND"
-echo "ro.product.name=$PRODUCT_NAME"
-echo "ro.product.device=$TARGET_DEVICE"
+echo "ro.product.model=ROCK64"
+echo "ro.product.brand=PINE64"
+echo "ro.product.name=PINE64-ROCK64"
+echo "ro.product.device=PINE64-ROCK64"
 echo "ro.product.board=$TARGET_BOOTLOADER_BOARD_NAME"
 
 # These values are deprecated, use "ro.product.cpu.abilist"
